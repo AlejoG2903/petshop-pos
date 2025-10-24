@@ -1,2 +1,0 @@
-# petshop-pos
-Pos

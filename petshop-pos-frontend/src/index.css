@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DEBUG: descomentar para verificar que el CSS se carga
+html, body {
+  background: magenta !important;
+  color: black !important;
+}
+*/
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-800 transition-colors duration-300;
+  }
+
+  /* Dark mode separado para evitar usar variantes dentro de @apply */
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow p-6 transition;
+  }
+  .card:hover {
+    @apply shadow-md;
+  }
+  .dark .card {
+    @apply bg-gray-800;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition text-white;
+  }
+
+  .btn-blue {
+    @apply bg-blue-600;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+
+  .btn-green {
+    @apply bg-green-600;
+  }
+  .btn-green:hover {
+    @apply bg-green-700;
+  }
+
+  .btn-red {
+    @apply bg-red-600;
+  }
+  .btn-red:hover {
+    @apply bg-red-700;
+  }
+
+  .input {
+    @apply border bg-white rounded p-2 w-full text-gray-800;
+  }
+  .dark .input {
+    @apply border-gray-700 bg-gray-800 text-gray-100;
+  }
+
+  .table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .table th {
+    @apply text-left p-3 border-b bg-gray-50;
+  }
+  .dark .table th {
+    @apply border-gray-700 bg-gray-800;
+  }
+
+  .table td {
+    @apply p-3 border-b;
+  }
+  .dark .table td {
+    @apply border-gray-700;
+  }
+}
